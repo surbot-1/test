@@ -102,7 +102,7 @@
              setTimeout(function(){
              if (username == cUsername && password == dPassword) {
                   chat = true; 
-                  
+                  getIP();
                   document.querySelector('#div2').innerHTML = "";
                   document.querySelector('#div2').innerHTML += "You are Logedin. Start chat";
                   initiateChat();
