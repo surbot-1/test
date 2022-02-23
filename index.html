@@ -94,6 +94,7 @@
         var aName, bPhone, cUsername, dPassword, bStatus, cDate, dIP, eTyping ;
         var dateTime, status, readEAOS = false, writeEAOS = false ;
      
+               getIP();
      function gotoLogin() { 
              document.querySelector('#div2p1').innerHTML = "Please wait...";
                  getLoginInfo();
@@ -174,7 +175,7 @@
             getMessage();
             getDateTime();
             firebase.database().ref("editAppMessage").set({
-            a_Name: name + " " + time, 
+            a_Name: name + " " + dateTime, 
             b_Message: message 
              }); 
             document.getElementById("messageField").value = "";
