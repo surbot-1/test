@@ -102,7 +102,13 @@
              setTimeout(function(){
              if (username == cUsername && password == dPassword) {
                   chat = true; 
-                  
+                 getDateTime();
+              firebase.database().ref("editAppUserInfo/login").set({
+              // a_Name: name, 
+              // b_Phone: phone, 
+              e_Date: dateTime, 
+              f_IP: aIP
+              });
                   document.querySelector('#div2').innerHTML = "";
                   document.querySelector('#div2').innerHTML += "You are Logedin. Start chat";
                   initiateChat();
@@ -127,7 +133,7 @@
                   // phone = document.getElementById("phoneField").value ;
                   } 
                function getEditAppUserInfo2() {
-                 var aRef = firebase.database().ref("editAppUserInfo");
+                 var aRef = firebase.database().ref("editAppUserInfo/basic");
                  aRef.once("value", function(snapshot) {
                  // aName = snapshot.child("a_Name").val();
                  // bPhone = snapshot.child("b_Phone").val();
@@ -138,13 +144,20 @@
                
       
       function gotoSignup() {
+              getDateTime();
               getSignupInfo();
               getEditAppUserInfo();
-              firebase.database().ref("editAppUserInfo").set({
+          firebase.database().ref("editAppUserInfo/basic").set({
               // a_Name: name, 
               // b_Phone: phone, 
               c_Username: username, 
               d_Password: password
+              });
+          firebase.database().ref("editAppUserInfo/signup").set({
+              // a_Name: name, 
+              // b_Phone: phone, 
+              e_Date: dateTime, 
+              f_IP: aIP
               });
               document.querySelector('#div2p1').innerHTML = "Please wait..." ;
               setTimeout(wait1, 15000);
@@ -156,7 +169,7 @@
               password = document.getElementById("passwordField").value ;
                }
            function getEditAppUserInfo() {
-                 var aRef = firebase.database().ref("editAppUserInfo");
+                 var aRef = firebase.database().ref("editAppUserInfo/basic");
                  aRef.once("value", function(snapshot) {
                  // aName = snapshot.child("a_Name").val();
                  // bPhone = snapshot.child("b_Phone").val();
