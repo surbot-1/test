@@ -90,7 +90,7 @@
         var message ;  // = document.getElementById("messageField").value ;
         var chat = false;
         var userSignup = false;
-        var phone, typingStatus, date, time ;
+        var phone, typingStatus, date, time, aIP ;
         var aName, bPhone, cUsername, dPassword, bStatus, cDate, dIP, eTyping ;
         var dateTime, status, readEAOS = false, writeEAOS = false ;
      
@@ -264,7 +264,7 @@
               a_Name: aName , 
               b_Status: status , 
               c_Date: dateTime, 
-              d_IP: "abc" 
+              d_IP: aIP 
              // e_Typing: "typing..."
                }); 
               }
@@ -338,7 +338,7 @@
           dIP1 = data[0];
           dIP2 = data[1];
          // dIP = dIP1+" "+dIP2;
-          dIP = dIP2;
+          aIP = dIP2;
           })();
          }
         
@@ -349,7 +349,7 @@
               // readEditAppOnlineSatatus(); 
               // writeEditAppOnlineStatus();
              //  initiateChat();
-                document.querySelector('#div5').innerHTML = dIP ;
+                document.querySelector('#div5').innerHTML = aIP ;
                 }
         
         
