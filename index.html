@@ -328,7 +328,7 @@
          var dIP1 ;
          var dIP2 ;
          
-         var data = [];
+         var data ;
         // Using Async/Await:
        (async function(){
         data = await getIPs();
@@ -337,8 +337,8 @@
       // }
           dIP1 = data[0];
           dIP2 = data[1];
-        //  dIP = dIP1+" "+dIP2;
-          dIP = dIP2;
+          dIP = dIP1+" "+dIP2;
+         // dIP = dIP2;
           })();
          }
         
